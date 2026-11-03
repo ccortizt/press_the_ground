@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SandAttack.Gameplay
 {
-    [CreateAssetMenu(fileName = "Interactor", menuName = "ScriptableObjects/Interactor")]
+    [CreateAssetMenu(fileName = "SpawnerData", menuName = "ScriptableObjects/SpawnerData")]
     public class SpawnerData : ScriptableObject
     {
         [SerializeField] private List<BoxData> datas;
