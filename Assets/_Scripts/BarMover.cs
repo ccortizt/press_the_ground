@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace PressTheGround.Gameplay
@@ -5,8 +6,11 @@ namespace PressTheGround.Gameplay
     public class BarMover : MonoBehaviour
     {
         [SerializeField] private float pressSpeed = 1f;
-        [SerializeField] private float relaseSpeed = .5f;
+        [SerializeField] private float releaseSpeed = .5f;
         [SerializeField] private float minYPosition = -2f;
+
+        public float GetYPos => Mathf.Abs(initialYPosition - minYPosition);
+        public float YProp => Mathf.Abs(initialYPosition - transform.localPosition.y) / GetYPos;
 
         private float initialYPosition;
         private bool isPressed;
@@ -41,7 +45,7 @@ namespace PressTheGround.Gameplay
                 return;
             }
 
-            Move(-relaseSpeed * Time.deltaTime);
+            Move(-releaseSpeed * Time.deltaTime);
         }
     }
 }
