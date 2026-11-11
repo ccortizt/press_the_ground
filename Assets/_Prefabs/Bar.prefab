@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 425645182327839313}
   - component: {fileID: 7044848525147625161}
   - component: {fileID: 5325441692524830014}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 38c901a45cfae5e3299edfe1d683bdde, type: 2}
+  - {fileID: 2100000, guid: 137f51ecdb29515c1a8ce25c5b6c2028, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,8 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aef7e68aa5162b4ea44269113b69950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SandAttack.Gameplay.BarScaler
-  deltaScale: 0.1
-  random: 0
+  pressSpeed: 3
+  relaseSpeed: 0.5
+  minYPosition: -2
 --- !u!54 &5325441692524830014
 Rigidbody:
   m_ObjectHideFlags: 0

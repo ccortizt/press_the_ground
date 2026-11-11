@@ -1,34 +1,47 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace SandAttack.Gameplay
 {
     public class BarMover : MonoBehaviour
     {
-        [SerializeField] private float speed = 1f;
+        [SerializeField] private float pressSpeed = 1f;
+        [SerializeField] private float relaseSpeed = .5f;
         [SerializeField] private float minYPosition = -2f;
 
         private float initialYPosition;
+        private bool isPressed;
 
         private void Start()
         {
             initialYPosition = transform.localPosition.y;
         }
 
-        public void Move(float deltaYMovement)
+        private void Move(float deltaYMovement)
         {
             var newPosition = transform.localPosition + Vector3.up * deltaYMovement;
             newPosition.y = Mathf.Clamp(newPosition.y, minYPosition, initialYPosition);
             transform.localPosition = newPosition;
         }
 
+        public void Press()
+        {
+            isPressed = true;
+        }
+
+        public void Release()
+        {
+            isPressed = false;
+        }
+
         private void Update()
         {
-            if (Keyboard.current.uKey.isPressed)
-                Move(speed * Time.deltaTime);
-            if (Keyboard.current.iKey.isPressed)
-                Move(-speed * Time.deltaTime);
+            if (!isPressed)
+            {
+                Move(pressSpeed * Time.deltaTime);
+                return;
+            }
+
+            Move(-relaseSpeed * Time.deltaTime);
         }
     }
 }

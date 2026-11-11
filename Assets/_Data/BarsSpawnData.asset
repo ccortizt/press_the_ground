@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BarsSpawnData
   m_EditorClassIdentifier: Assembly-CSharp::SandAttack.Gameplay.SpawnerData
   datas:
-  - MinX: 0
-    MinZ: 0
+  - MinX: -10
+    MinZ: -10
     MaxX: 10
     MaxZ: 10
     Y: 0
