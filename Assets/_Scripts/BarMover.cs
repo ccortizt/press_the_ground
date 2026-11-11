@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SandAttack.Gameplay
+namespace PressTheGround.Gameplay
 {
     public class BarMover : MonoBehaviour
     {

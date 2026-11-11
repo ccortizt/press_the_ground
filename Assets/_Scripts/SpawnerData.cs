@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SandAttack.Gameplay
+namespace PressTheGround.Gameplay
 {
     [CreateAssetMenu(fileName = "SpawnerData", menuName = "ScriptableObjects/SpawnerData")]
     public class SpawnerData : ScriptableObject
