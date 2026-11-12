@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace PressTheGround.Gameplay
@@ -9,8 +8,8 @@ namespace PressTheGround.Gameplay
         [SerializeField] private float releaseSpeed = .5f;
         [SerializeField] private float minYPosition = -2f;
 
-        public float GetYPos => Mathf.Abs(initialYPosition - minYPosition);
-        public float YProp => Mathf.Abs(initialYPosition - transform.localPosition.y) / GetYPos;
+        public float YProp => Mathf.Abs(initialYPosition - transform.localPosition.y) / 
+                              Mathf.Abs(initialYPosition - minYPosition);
 
         private float initialYPosition;
         private bool isPressed;
@@ -37,15 +36,15 @@ namespace PressTheGround.Gameplay
             isPressed = false;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (!isPressed)
             {
-                Move(pressSpeed * Time.deltaTime);
+                Move(pressSpeed * Time.fixedDeltaTime);
                 return;
             }
 
-            Move(-releaseSpeed * Time.deltaTime);
+            Move(-releaseSpeed * Time.fixedDeltaTime);
         }
     }
 }

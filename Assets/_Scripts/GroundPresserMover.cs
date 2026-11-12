@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,12 +15,11 @@ namespace PressTheGround.Gameplay
 
         private void Update()
         {
-            if (Mouse.current.leftButton.isPressed)
+            if (Keyboard.current.anyKey.isPressed)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-                RaycastHit hit;
 
-                if (Physics.Raycast(ray, out hit, 100, interactionLayer))
+                if (Physics.Raycast(ray, out var hit, 100, interactionLayer))
                 {
                     groundPresser.SetActive(true);
                     groundPresser.transform.position = hit.point;

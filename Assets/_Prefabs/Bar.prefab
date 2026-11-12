@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aef7e68aa5162b4ea44269113b69950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SandAttack.Gameplay.BarScaler
-  pressSpeed: 1
+  pressSpeed: 3
   releaseSpeed: 0.5
   minYPosition: -2
 --- !u!114 &5714362648363129509

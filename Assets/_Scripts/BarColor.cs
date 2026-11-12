@@ -17,7 +17,7 @@ namespace PressTheGround.Gameplay
             barMover = GetComponent<BarMover>();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             barMaterial.SetColor(BaseColor, Color.Lerp(initialColor, Color.white, barMover.YProp));
         }
